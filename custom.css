@@ -1,0 +1,104 @@
+/* =============================================================================
+   custom.css
+============================================================================= */
+
+/* --- リセット ------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* --- マップ --------------------------------------------------------------- */
+
+#map {
+  position: absolute;
+  inset: 0;         /* top/right/bottom/left: 0 の省略形 */
+  width: 100%;
+  height: 100%;
+}
+
+/* --- ローディングスピナー ------------------------------------------------- */
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  visibility: hidden; /* JS で制御 */
+}
+
+/* --- サイドバー ----------------------------------------------------------- */
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 1.5rem 1.25rem;
+  background-color: #1a1a2e;
+  color: #e8e8f0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.sidebar-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+  margin: 1rem 0;
+}
+
+.sidebar-section {
+  margin-bottom: 1rem;
+}
+
+.sidebar-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+/* --- チェックボックス ----------------------------------------------------- */
+
+.form-check {
+  padding-left: 1.5em;   /* Bootstrap のデフォルト値を維持 */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-check-input {
+  flex-shrink: 0;
+  margin-left: -1.5em;   /* Bootstrap のオフセットを維持 */
+  accent-color: #4fa3e0;
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #c8c8d8;
+}
+
+/* --- Leaflet ポップアップ ------------------------------------------------- */
+
+.leaflet-popup-content {
+  font-size: 0.875rem;
+  font-family: sans-serif;
+  min-width: 120px;
+}

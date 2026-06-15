@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Map</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./custom.css">
+</head>
+
+<body>
+
+  <!-- マップキャンバス -->
+  <div id="map"></div>
+  <div id="loading" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <!-- サイドバー -->
+  <aside id="sidebar">
+    <h1 class="sidebar-title">サンプルデータ</h1>
+
+    <!-- エリア選択 -->
+    <div class="sidebar-section">
+      <label for="area" class="form-label">エリアを選択</label>
+      <select id="area" class="form-select form-select-sm bg-dark text-white border-secondary">
+        <option value="">-- 選択 --</option>
+        <option value="fly-japan">日本</option>
+        <option value="fly-okinawa">沖縄県</option>
+        <option value="fly-mainland">沖縄本島</option>
+      </select>
+    </div>
+
+    <hr class="sidebar-divider" style="border-top: 1px solid lightgray;">
+
+    <!-- レイヤー切り替え -->
+    <div class="sidebar-section">
+      <p class="sidebar-section-label">データレイヤー (単色)</p>
+      <div id="layerSwitcher">
+        <!-- ポイント（geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="restaurantsCheckbox">
+            <label class="form-check-label" for="restaurantsCheckbox">レストラン</label>
+        </div>
+        <!-- ライン (geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="railwaysCheckbox">
+            <label class="form-check-label" for="railwaysCheckbox">鉄道</label>
+        </div>
+        <!-- ポリゴン (geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="usa_militaryCheckbox">
+            <label class="form-check-label" for="usa_militaryCheckbox">在日米軍施設</label>
+        </div>
+      </div>
+
+      <p class="sidebar-section-label">データレイヤー (複数色)</p>
+      <div id="layerSwitcher2">
+        <!-- ポイント（geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="hotelsCheckbox">
+            <label class="form-check-label" for="hotelsCheckbox">宿泊施設</label>
+        </div>
+        <!-- ライン (geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="flight_networkCheckbox">
+            <label class="form-check-label" for="flight_networkCheckbox">空港ネットワーク</label>
+        </div>
+        <!-- ポリゴン (geojson) -->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="youto_chiikiCheckbox">
+            <label class="form-check-label" for="youto_chiikiCheckbox">用途地域</label>
+        </div>
+    </div>
+    </div>
+  </aside>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Custom JS -->
+  <script src="./map.js"></script>
+
+</body>
+</html>
